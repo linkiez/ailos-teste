@@ -1,0 +1,22 @@
+<div class="bg-white shadow-sm card p-8 flex flex-col">
+  <div>
+    <strong>Situação cadastral do CPF</strong><br />
+
+    <small class="text-gray-600"> Consulta na Receita Federal </small>
+  </div>
+  <div class="flex flex-row items-center">
+    <span class="material-icons text-gray-400 px-4">person</span>
+
+    <div class="flex flex-col flex-1">
+      <small class="text-gray-400"> Nome </small>
+      <p>{{pessoa.nome}}</p>
+    </div>
+  </div>
+  <div class="flex flex-row items-center">
+    <span class="material-icons text-green-400 px-4">check_circle_outline</span>
+    <div class="flex flex-col flex-1">
+      <small class="text-gray-400"> Situação do CPF </small>
+      <p>{{pessoa.situacao}}</p>
+    </div>
+  </div>
+</div>

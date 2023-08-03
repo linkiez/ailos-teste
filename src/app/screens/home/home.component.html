@@ -1,0 +1,41 @@
+<div fxFlexFill class="flex flex-col">
+  <div class="page p-8 space-y-4 flex-1" >
+    <div>
+      <h2>Informe o CPF do futuro cooperado (a)</h2>
+      <small class="text-gray-600">
+        Se necessário, você poderá duplicar uma conta existente ou pausar e
+        retomar este cadastro futuramente. <br />
+        Digite apenas números, sem pontos ou traços.
+      </small>
+    </div>
+
+    <div>
+      <form (ngSubmit)="buscarPessoa()">
+        <label for="cpf" class="w-full"><strong>CPF</strong> </label><br />
+        <input
+          type="text"
+          placeholder="000.000.000-00"
+          [ngModel]="cpf | cpfCnpj"
+          (ngModelChange)="cpf = $event"
+          name="cpf"
+          id="cpf"
+          (input)="cpfValido = validaCPF()"
+          maxlength="18"
+          class="w-64 p-2 border border-black shadow-sm"
+        />
+
+        <button class="ml-4 shadow-sm buttonBlue">Consultar por CPF</button><br />
+        <small *ngIf="!cpfValido">CPF invalido</small>
+      </form>
+    </div>
+    <div class="flex flex-row flex-wrap">
+      <ng-container *ngIf="pessoas.length > 0">
+        <app-card-conta [pessoa]="pessoas[0]"></app-card-conta>
+      </ng-container>
+    </div>
+  </div>
+  <div class="bg-white p-4 space-x-4">
+    <button class="buttonBlue" (click)="goToCadastro()">Iniciar nova admissão</button>
+    <button class="buttonWhite">Discas para abertura da conta</button>
+  </div>
+</div>
