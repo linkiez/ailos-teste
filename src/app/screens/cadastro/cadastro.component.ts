@@ -11,10 +11,13 @@ export class CadastroComponent {
 
   pessoa: Pessoa = {} as Pessoa;
 
+  idFrente: File | undefined;
+  idVerso: File | undefined;
+  comprovanteResidencia: File | undefined;
+  comprovanteRenda: File | undefined;
+
   constructor(private route: ActivatedRoute) { }
 
 ngOnInit() {
-  ;
-  console.log(this.route.snapshot);
 }
 }

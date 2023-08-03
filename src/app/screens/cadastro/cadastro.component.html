@@ -1,1 +1,45 @@
-<p>cadastro works!</p>
+<div class="page flex flex-col">
+  <div class="flex-1 flex flex-col p-4">
+    <h4 class="mb-4">Digitalização de documentos</h4>
+    <strong>DOCUMENTOS DO COPERADO</strong>
+    <small class="text-gray-400"
+      >A inserção de documentos pode ser feita via upload do computador ou fluxo
+      do SmarShare(impressora). Os documentos devem ter boa visibilidade, estar
+      legiveis e dentro das datas de validade.</small
+    >
+    <div class="flex flex- my-4 justify-between">
+      <app-card-upload
+        [titulo]="'Identificação (frente)'"
+        [obrigatorio]="true"
+        (onChangeFiles)="idFrente = $event"
+      ></app-card-upload>
+      <app-card-upload
+        [titulo]="'Identificação (verso)'"
+        [obrigatorio]="true"
+        (onChangeFiles)="idVerso = $event"
+      ></app-card-upload>
+      <app-card-upload
+        [titulo]="'Comprovante de residência'"
+        [obrigatorio]="true"
+        (onChangeFiles)="comprovanteResidencia = $event"
+      ></app-card-upload>
+      <app-card-upload
+        [titulo]="'Comprovante de renda'"
+        [obrigatorio]="false"
+        (onChangeFiles)="comprovanteRenda = $event"
+      ></app-card-upload>
+    </div>
+    <hr />
+    <strong>DOCUMENTOS DO REPRESENTANTE</strong>
+    <small class="text-gray-400"
+      >Os documentos do responsável legal, curador ou procurador devem ser
+      inclusos no sistema para verificação e devem ter boa visibilidade, estar
+      legiveis e dentro das datas de validade.</small
+    >
+    <mat-slide-toggle></mat-slide-toggle>
+  </div>
+  <div class="bg-white p-4 space-x-4">
+    <button class="buttonBlue">Proximo</button>
+    <button routerLink="/home" class="buttonWhite">Voltar</button>
+  </div>
+</div>

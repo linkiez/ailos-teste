@@ -12,7 +12,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardContaComponent } from './components/card-conta/card-conta.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CadastroComponent } from './screens/cadastro/cadastro.component';
-
+import { CardUploadComponent } from './components/card-upload/card-upload.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +24,16 @@ import { CadastroComponent } from './screens/cadastro/cadastro.component';
     CpfCnpjPipe,
     CardContaComponent,
     CadastroComponent,
+    CardUploadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

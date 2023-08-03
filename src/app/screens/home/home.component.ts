@@ -13,7 +13,7 @@ export class HomeComponent {
   cpfValido: boolean = true;
   pessoas: Pessoa[] = [];
 
-  constructor(private backendService: BackendService, private router: Router, ) {}
+  constructor(private backendService: BackendService, private router: Router) {}
 
   validaCPF() {
     let cpfQuantosNumeros = this.cpf
@@ -76,6 +76,7 @@ export class HomeComponent {
   }
 
   goToCadastro() {
-    this.router.navigate(['cadastro'], {state: this.pessoas[0]});
+    const data = { pessoa: this.pessoas[0] };
+    this.router.navigate(['cadastro'], { state: data });
   }
 }

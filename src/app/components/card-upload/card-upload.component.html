@@ -1,0 +1,27 @@
+<div class="card bg-white p-4 shadow-md flex flex-col">
+  <strong>{{ titulo }}</strong>
+  <small class="text-gray-400" [ngClass]="{ laranja: obrigatorio == true }">{{
+    obrigatorio ? "Obrigátorio" : "Opcional"
+  }}</small>
+  <div
+    *ngIf="imagePath == undefined"
+    class="border border-dashed border-gray-400 p-4 text-center text-gray-400 flex flex-col flex-1 upload_area"
+    (click)="fileUpload.click()"
+  >
+    <span class="material-icons-outlined upload_size">upload_file</span>
+    <span>Clique aqui ou arraste o seu arquivo</span>
+    <input
+      type="file"
+      class="file-input"
+      (change)="onFileSelected($event)"
+      #fileUpload
+    />
+  </div>
+  <button *ngIf="imagePath == undefined" class="buttonWhite">
+    Capturar Imagem
+  </button>
+  <div *ngIf="imagePath">
+    <img [src]="imagePath" alt="Foto do documento" />
+    <button class="buttonWhite" (click)="imagePath = undefined">Excluir</button>
+  </div>
+</div>
